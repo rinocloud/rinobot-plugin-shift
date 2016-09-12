@@ -19,4 +19,6 @@ if __name__ == "__main__":
 
     data[:, args.column -1] = data[:, args.column -1] + args.shift
 
-    np.savetxt(filename_without_ext + '-shifted.txt', data)
+    np.savetxt(
+        filename_without_ext + '-shifted-col%d-%1.2lf.txt' % (args.column, args.shift), 
+        data)
