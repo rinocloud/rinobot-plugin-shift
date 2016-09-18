@@ -3,7 +3,7 @@
   "engine": "python3",
   "name": "rinobot-plugin-shift",
   "description": "Shifts a column of data by a set number",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "template": "--column=2 --shift=5",
   "author": "eoin murray",
   "license": "MIT",
