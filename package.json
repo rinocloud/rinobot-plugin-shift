@@ -7,6 +7,9 @@
   "template": "--column=2 --shift=5",
   "author": "eoin murray",
   "license": "MIT",
+  "scripts": {
+    "postinstall": "pip install rinobot-plugin --upgrade"
+  },
   "repository": "https://github.com/rinocloud/rinobot-plugin-shift.git",
   "keywords": [
     "rinobot",

@@ -1,24 +1,21 @@
-import sys
-import os
-import argparse
+import rinobot_plugin as bot
 import numpy as np
-import matplotlib
-import matplotlib.pyplot as plt
+
+def main():
+    # lets get our parameters and data
+    filepath = bot.filepath()
+    data = bot.loadfile(filepath)
+
+    # now comes the custom plugin logic
+    shift = bot.get_arg('shift', type=float, required=True)
+    index = bot.index_from_args(data)
+    data[index] = data[index] + shift
+
+    outname = bot.no_extension() + '-shift-%s.txt' % shift
+
+    # then we set up the output
+    outpath = bot.output_filepath(outname)
+    np.savetxt(outpath, data)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('filepath', type=str)
-    parser.add_argument('--column', type=int, required=True)
-    parser.add_argument('--shift', type=float, required=True)
-
-    args = parser.parse_args()
-    filepath = args.filepath
-
-    filename_without_ext = os.path.splitext(filepath)[0]
-    data = np.loadtxt(filepath)
-
-    data[:, args.column -1] = data[:, args.column -1] + args.shift
-
-    np.savetxt(
-        filename_without_ext + '-shifted-col%d-%1.2lf.txt' % (args.column, args.shift), 
-        data)
+    main()
