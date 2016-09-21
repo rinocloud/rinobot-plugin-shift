@@ -11,6 +11,8 @@ def main():
     index = bot.index_from_args(data)
     data[index] = data[index] + shift
 
+
+
     outname = bot.no_extension() + '-shift-%s.txt' % shift
 
     # then we set up the output
