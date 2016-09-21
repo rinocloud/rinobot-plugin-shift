@@ -7,6 +7,21 @@
   "template": "--column=2 --shift=5",
   "author": "eoin murray",
   "license": "MIT",
+  "options": {
+    "cols": {
+      "type": "string",
+      "description": "Specify which columns to operate on."
+    },
+    "rows": {
+      "type": "string",
+      "description": "Specify which rows to operate on."
+    },
+    "shift": {
+      "type": "float",
+      "description": "Specify how much to shift data by.",
+      "required": true
+    },
+  },
   "scripts": {
     "postinstall": "pip install rinobot-plugin --upgrade"
   },
