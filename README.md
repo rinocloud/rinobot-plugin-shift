@@ -31,9 +31,5 @@ And you choose to shift the second column by -1 then the result will be:
 
 In the extra args section of the rinobot automation config you can set the following parameters
 
-Extra args:
-```
---column=2 --shift=-5
-```
-
-You can set all or none of these parameters.
+- shift [__required__]: the number to shift the data by
+- cols: the columns to work on (see [Selecting columns and rows of data](https://docs.rinocloud.com/rinocloud-desktop/slicing_data.html))
